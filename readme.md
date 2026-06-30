@@ -1,7 +1,5 @@
 # Learning Vocabulary Tool
 
-## Tool-Challenge – Ihr Projekt
-
 ### Ziel
 
 Das **Learning Vocabulary Tool** ist ein kleines Python-Projekt zum Lernen von Vokabeln und Fachbegriffen.  
@@ -64,9 +62,6 @@ https://www.python.org/
 git clone https://github.com/MoritzSchallenberg/Learning-vocabulary-tool.git
 ```
 
-Alternativ kann das Projekt auch als ZIP-Datei von GitHub heruntergeladen werden.
-
-
 ### 3. In den Projektordner wechseln
 
 ```bash
@@ -105,7 +100,6 @@ Mit `delete` können Decks, Wörter oder einzelne Definitionen gelöscht werden.
 ### play
 
 Mit `play` startet der Lernmodus.  
-Dabei werden Wörter und Definitionen abgefragt.
 
 ### show
 
@@ -125,7 +119,6 @@ Learning-vocabulary-tool
 ├── script.py
 ├── flashcards.json
 ├── README.md
-└── LICENSE
 ```
 
 ### script.py
@@ -137,7 +130,6 @@ Enthält die Hauptlogik des Programms:
 - Löschen von Einträgen
 - Lernmodus
 - Bewertung der Antworten
-- Speicherung der Daten
 
 ### flashcards.json
 
@@ -147,19 +139,6 @@ Speichert die Lerninhalte:
 - Wörter
 - Definitionen
 - Schwierigkeitsgrad
-
----
-
-## Verwendete Python-Bibliotheken
-
-Das Projekt verwendet nur Python-Standardbibliotheken:
-
-```python
-json
-random
-```
-
-Es müssen keine zusätzlichen Bibliotheken installiert werden.
 
 ---
 
@@ -183,12 +162,5 @@ Für zukünftige Versionen sind folgende Erweiterungen sinnvoll:
 
 - Ähnliche Definitionen direkt im `play`-Modus hinzufügen.
 - Verbesserte Erkennung ähnlicher Wörter.
-- Besseres Abfangen kleiner Rechtschreibfehler.
-- Multiple-Choice-Modus.
-- Lernstatistiken anzeigen.
-- Import und Export von Karteikarten.
-- Grafische Benutzeroberfläche mit Tkinter oder PyQt.
-- Speicherung mehrerer Nutzerprofile.
-- Anzeige besonders schwieriger Wörter.
 
 ---
