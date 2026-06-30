@@ -117,10 +117,6 @@ Mit `quit` wird das Programm beendet.
 
 ---
 
-## Code
-
-Der Code ist lesbar und nachvollziehbar aufgebaut.
-
 ### Projektstruktur
 
 ```text
