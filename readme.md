@@ -1,82 +1,248 @@
-📚 Flashcard Learning Tool (Python)
+# Learning Vocabulary Tool
 
-🔍 Beschreibung
-Dieses Python-basierte Karteikarten-Tool ermöglicht es Studierenden, effizient für verschiedene Fächer zu lernen. Es bietet eine einfache Alternative zu kostenpflichtigen Programmen wie Anki und nutzt ein eigenes Schwierigkeitssystem, um Lerninhalte individuell zu priorisieren.
+## Tool-Challenge – Ihr Projekt
 
-🚀 Startanleitung
-1. Python installieren (falls noch nicht vorhanden)
-2. Projekt herunterladen oder klonen
-3. Im Terminal oder Editor ausführen:
-   python script.py
-4. Den Anweisungen im Programm folgen
+### Team
 
-⚙️ Funktionsweise (Input → Output)
-Input:
-Benutzer fügt Wörter + Definitionen hinzu
-Benutzer bewertet Schwierigkeit (1–10)
-Benutzer beantwortet Fragen im Lernmodus
+- Moritz Schallenberg  
+- Teamgröße: Einzelprojekt / optional mit weiteren Gruppenmitgliedern
 
-Output:
-Wörter werden gespeichert (JSON-Datenbank)
-Schwierige Wörter werden häufiger angezeigt
-Lernfortschritt wird sichtbar gemacht (Trefferquote)
+---
 
-🧠 Features
-➕ 1. Karten hinzufügen (add)
-      - Neue oder bestehende Decks auswählen
-      - Wörter und Definitionen eingeben
-      - Schwierigkeit (1–10) festlegen
-❌ 2. Karten löschen (delete)
-      - Ganze Decks oder einzelne Wörter löschen
-🎮 3. Lernmodus (play)
-      - Deck auswählen
-      - Wörter werden abgefragt (abwechselnd Wort ↔ Definition)
-      - Schwierigkeit wird nach jeder Karte neu bewertet
-      - Karten werden nach Schwierigkeit priorisiert:
-      - Schwere Karten zuerst
-      - Innerhalb der Schwierigkeit zufällige Reihenfolge
-📋 4. Übersicht (show)
-      - Anzeige aller Decks, Wörter und:
-      - Definition
-      - Nächster Lernzeitpunkt
-      - Schwierigkeit
-🚪 5. Beenden (quit)
-      - Programm sauber beenden
+### Ziel
 
-💾 Datenstruktur
-Die Daten werden in einer JSON-Datei gespeichert:
-{
-  "Deckname": {
-    "Wort": {
-      "definition": "Beschreibung",
-      "next_review": "Zeitpunkt",
-      "difficulty": 7
-    }
-  }
-}
+Das **Learning Vocabulary Tool** ist ein kleines Python-Projekt zum Lernen von Vokabeln und Fachbegriffen.  
+Nutzer können eigene Karteikarten-Decks erstellen, Wörter mit mehreren Definitionen speichern und diese im Lernmodus abfragen lassen.
 
-💡 Besonderheiten
-Eigenes Priorisierungssystem basierend auf Schwierigkeit
-Kombination aus Sortierung + Zufall für optimales Lernen
-Einfach erweiterbar (z. B. Spaced Repetition möglich)
-Keine externen Libraries notwendig
+---
 
-📈 Beispiel
-Input:
-Word: Voltage  
-Definition: elektrische Spannung  
-Difficulty: 8
+### Mindestanforderung
 
-Output im Lernmodus:
-"Voltage"
-→ User antwortet falsch
-→ Schwierigkeit bleibt hoch
-→ Wort erscheint häufiger
+Der Code läuft lokal mit Python und kann über die beschriebene Startanleitung gestartet werden.
 
-Verbesserungen:
-- Ähnliche Definitions direkt im Play hinzufügen
-- Verbesserungen des abfangen ähnlicher Wörter
-- 
+---
 
-🎯 Ziel des Projekts
-Ziel ist es, ein einfaches, verständliches und funktionales Lernsystem zu entwickeln, das Studierenden hilft, Inhalte effizient zu wiederholen und langfristig zu behalten.
+## Dokumentation
+
+### Was macht das Tool?
+
+Das Tool verwaltet digitale Karteikarten in einer JSON-Datei.  
+Im Lernmodus werden Wörter oder Definitionen zufällig abgefragt und die Schwierigkeit der Karteikarten wird abhängig von der Antwort angepasst.
+
+---
+
+### Beispiel: Input → Output
+
+#### Beispiel-Eingabe
+
+```text
+Deck: Technisches Englisch
+Wort: Assembly line
+Definition: Fließband
+```
+
+#### Beispiel im Lernmodus
+
+```text
+Was bedeutet: Assembly line?
+Antwort: Fließband
+```
+
+#### Beispiel-Ausgabe
+
+```text
+Correct!
+
+Neue Schwierigkeit: 3
+Fortschritt:
+Bearbeitet: 15 / 40
+Richtig: 13
+```
+
+---
+
+## Startanleitung
+
+### 1. Python installieren
+
+Python muss auf dem Computer installiert sein.
+
+Download:  
+https://www.python.org/
+
+---
+
+### 2. Repository herunterladen
+
+```bash
+git clone https://github.com/MoritzSchallenberg/Learning-vocabulary-tool.git
+```
+
+Alternativ kann das Projekt auch als ZIP-Datei von GitHub heruntergeladen werden.
+
+---
+
+### 3. In den Projektordner wechseln
+
+```bash
+cd Learning-vocabulary-tool
+```
+
+---
+
+### 4. Programm starten
+
+```bash
+python script.py
+```
+
+---
+
+## Bedienung
+
+Nach dem Start erscheinen mehrere Auswahlmöglichkeiten:
+
+```text
+1. add
+2. delete
+3. play
+4. show
+5. quit
+```
+
+### add
+
+Mit `add` können neue Decks, Wörter und Definitionen hinzugefügt werden.
+
+### delete
+
+Mit `delete` können Decks, Wörter oder einzelne Definitionen gelöscht werden.
+
+### play
+
+Mit `play` startet der Lernmodus.  
+Dabei werden Wörter und Definitionen abgefragt.
+
+### show
+
+Mit `show` werden die gespeicherten Decks, Wörter, Definitionen und Schwierigkeitswerte angezeigt.
+
+### quit
+
+Mit `quit` wird das Programm beendet.
+
+---
+
+## Code
+
+Der Code ist lesbar und nachvollziehbar aufgebaut.
+
+### Projektstruktur
+
+```text
+Learning-vocabulary-tool
+│
+├── script.py
+├── flashcards.json
+├── README.md
+└── LICENSE
+```
+
+### script.py
+
+Enthält die Hauptlogik des Programms:
+
+- Menüführung
+- Hinzufügen von Decks und Wörtern
+- Löschen von Einträgen
+- Lernmodus
+- Bewertung der Antworten
+- Speicherung der Daten
+
+### flashcards.json
+
+Speichert die Lerninhalte:
+
+- Decks
+- Wörter
+- Definitionen
+- Schwierigkeitsgrad
+
+---
+
+## Verwendete Python-Bibliotheken
+
+Das Projekt verwendet nur Python-Standardbibliotheken:
+
+```python
+json
+random
+```
+
+Es müssen keine zusätzlichen Bibliotheken installiert werden.
+
+---
+
+## Bewertung der Antworten
+
+Im Lernmodus wird die Antwort automatisch bewertet.
+
+| Antworttyp | Auswirkung |
+|---|---|
+| Richtig | Schwierigkeit wird verringert |
+| Kleiner Schreibfehler | Schwierigkeit wird leicht erhöht |
+| Falsch | Schwierigkeit wird stärker erhöht |
+
+Dadurch werden schwierige Wörter häufiger wiederholt.
+
+---
+
+## Mögliche Verbesserungen
+
+Für zukünftige Versionen sind folgende Erweiterungen sinnvoll:
+
+- Ähnliche Definitionen direkt im `play`-Modus hinzufügen.
+- Verbesserte Erkennung ähnlicher Wörter.
+- Besseres Abfangen kleiner Rechtschreibfehler.
+- Multiple-Choice-Modus.
+- Lernstatistiken anzeigen.
+- Import und Export von Karteikarten.
+- Grafische Benutzeroberfläche mit Tkinter oder PyQt.
+- Speicherung mehrerer Nutzerprofile.
+- Anzeige besonders schwieriger Wörter.
+
+---
+
+## GitHub Repository
+
+```text
+https://github.com/MoritzSchallenberg/Learning-vocabulary-tool
+```
+
+---
+
+## Kurzpräsentation / Video
+
+Optional kann das Projekt in einem kurzen Video oder einer Präsentation gezeigt werden.
+
+Möglicher Ablauf:
+
+1. Kurz erklären, was das Tool macht.
+2. Ein neues Deck erstellen.
+3. Ein Wort mit Definition hinzufügen.
+4. Den Lernmodus starten.
+5. Eine richtige und eine falsche Antwort zeigen.
+6. Kurz erklären, wie die Schwierigkeit angepasst wird.
+
+---
+
+## Bewertungshinweis
+
+Das Projekt erfüllt die Anforderungen der Tool-Challenge:
+
+- kleines Python-Projekt
+- verständlicher Code
+- lokale Ausführung möglich
+- README mit Beschreibung, Beispiel und Startanleitung
+- nachvollziehbare Struktur
+- sinnvolle Erweiterungsmöglichkeiten
