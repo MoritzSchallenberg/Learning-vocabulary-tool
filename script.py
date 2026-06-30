@@ -2,14 +2,18 @@ import json
 import random
 from collections import defaultdict
 
+#Zeiterfassung
 DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATA_FILE = "flashcards.json"
+
+#Open Json (Brauchen wir überhaupt?)
 try:
     with open("flashcards.json", "r") as json_file:
         words = json.load(json_file)
 except (FileNotFoundError, json.JSONDecodeError):
     words = {}
 
+#Speicherung in Json
 def save_data():
     try:
         with open("flashcards.json", "w") as json_file:
@@ -18,6 +22,7 @@ def save_data():
         with open("flashcards.json", "w") as json_file:
             json.dump(words, json_file, indent=4)
 
+#Längeres Wort = a setzen, kürzeres Wort = b, vergleicht jeden Buchstaben danach einzelnd (einsetzung im play)
 def levenshtein(a, b):
     if len(a) < len(b):
         return levenshtein(b, a)
@@ -36,6 +41,7 @@ def levenshtein(a, b):
 
     return previous_row[-1]
 
+#
 def add_words():
     prompt = input("Type 'n' for new deck or 'o' for old one: ").strip().lower()
     if prompt == "n":
@@ -202,7 +208,8 @@ def delete_words():
             print(f"- {d}")
     
         del_def = input("Which definition to delete?: ").strip()
-    
+        
+        # Überprüfung nicht 0 definitions
         if del_def in definitions:
             definitions.remove(del_def)
             if len(definitions) == 0:
