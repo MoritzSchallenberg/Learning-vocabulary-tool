@@ -2,7 +2,7 @@ import json
 import random
 from collections import defaultdict
 
-#Zeiterfassung
+// Zeiterfassung
 DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATA_FILE = "flashcards.json"
 
@@ -219,26 +219,25 @@ def delete_words():
 
 // Lernmodus
 def play():
+    // Nachschauen ob überhaupt Decks angelegt wurden.
     if not words:
         print("No decks available to play.")
         return
-
+    
+    // Auswählen Deck zum lernen
     for deck in words:
         print(f'- {deck}')
     deck = input("Which deck do you want to play: ").strip()
-
     if deck not in words:
         print(f'Deck "{deck}" does not exist.')
         return
-
     print(f'Deck "{deck}" is selected')
-
     due_words = list(words[deck].keys())
-
     if not due_words:
         print("No cards are due for review right now.")
         return
-    
+
+    // Wörter nach schwierigkeit sortiern (in Gruppen aufteilen, random shuffel, wieder zusammenführen)
     due_words.sort(key=lambda w: words[deck][w].get("difficulty", 5), reverse=True)
     grouped = {}
     for w in due_words:
@@ -249,7 +248,8 @@ def play():
         group = grouped[diff]
         random.shuffle(group)
         due_words.extend(group)
-    
+
+    // Erfolgscounter Variable setzen, 
     counter = 0
     for i, word in enumerate(due_words):
         definitions = words[deck][word]["definition"]
@@ -259,6 +259,7 @@ def play():
 
         definitions = [d.lower() for d in definitions]
 
+        // Wörter eintragen + Überprüfung und einordnung Fehlerkategorie
         if i % 2 == 0:
             # FRONT → Wort anzeigen
             print(f'"{word}"')
@@ -293,7 +294,7 @@ def play():
                     print(f"Wrong! Correct answer: {word}")
                     result = "wrong"
 
-        
+        // Je nach Fehlerkategorie Schwierigkeit anpassen
         current_difficulty = int(words[deck][word].get("difficulty", 5))
         if result == "correct":
             new_difficulty = max(1, current_difficulty - 2)
@@ -308,7 +309,7 @@ def play():
 
     print(f'You have finished this deck')
 
-// Anzeige der Decks und Wörter
+// Anzeige aller Decks und Wörter in der Json
 def show():
     if not words:
         print("No decks to show.")
