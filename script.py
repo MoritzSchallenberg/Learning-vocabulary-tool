@@ -136,7 +136,7 @@ def add_words():
                 if more != "y":
                     filling = False
 
-
+# Auswählen was gelöscht werden und dann löschen
 def delete_words():
     choice = input('Delete "deck", "word" or "definition": ').strip().lower()
     if choice == "deck":
@@ -217,6 +217,7 @@ def delete_words():
             words[deck][chosen_word]["definition"] = definitions
             save_data()
 
+# Lernmodus
 def play():
     if not words:
         print("No decks available to play.")
@@ -307,6 +308,7 @@ def play():
 
     print(f'You have finished this deck')
 
+# Anzeige der Decks und Wörter
 def show():
     if not words:
         print("No decks to show.")
@@ -323,6 +325,7 @@ def show():
                 print(f"    Definition: {definition}")
             print(f"    Difficulty: {difficulty}")
 
+# Funktion am Anfang und Ansteuerung verschieden Befehle
 def start():
     while True:
         option = input(
