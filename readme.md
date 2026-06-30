@@ -73,5 +73,10 @@ Output im Lernmodus:
 → Schwierigkeit bleibt hoch
 → Wort erscheint häufiger
 
+Verbesserungen:
+- Ähnliche Definitions direkt im Play hinzufügen
+- Verbesserungen des abfangen ähnlicher Wörter
+- 
+
 🎯 Ziel des Projekts
 Ziel ist es, ein einfaches, verständliches und funktionales Lernsystem zu entwickeln, das Studierenden hilft, Inhalte effizient zu wiederholen und langfristig zu behalten.
