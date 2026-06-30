@@ -2,23 +2,10 @@
 
 ## Tool-Challenge – Ihr Projekt
 
-### Team
-
-- Moritz Schallenberg  
-- Teamgröße: Einzelprojekt / optional mit weiteren Gruppenmitgliedern
-
----
-
 ### Ziel
 
 Das **Learning Vocabulary Tool** ist ein kleines Python-Projekt zum Lernen von Vokabeln und Fachbegriffen.  
 Nutzer können eigene Karteikarten-Decks erstellen, Wörter mit mehreren Definitionen speichern und diese im Lernmodus abfragen lassen.
-
----
-
-### Mindestanforderung
-
-Der Code läuft lokal mit Python und kann über die beschriebene Startanleitung gestartet werden.
 
 ---
 
