@@ -75,6 +75,3 @@ Output im Lernmodus:
 
 🎯 Ziel des Projekts
 Ziel ist es, ein einfaches, verständliches und funktionales Lernsystem zu entwickeln, das Studierenden hilft, Inhalte effizient zu wiederholen und langfristig zu behalten.
-
-👨‍💻 Autor
-Moritz Schallenberg
