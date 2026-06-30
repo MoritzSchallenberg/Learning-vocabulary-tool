@@ -6,7 +6,7 @@ from collections import defaultdict
 DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATA_FILE = "flashcards.json"
 
-#Open Json
+// Open Json
 try:
     with open("flashcards.json", "r") as json_file:
         words = json.load(json_file)
@@ -21,7 +21,7 @@ def save_data():
         with open("flashcards.json", "w") as json_file:
             json.dump(words, json_file, indent=4)
 
-#Längeres Wort = a setzen, kürzeres Wort = b, vergleicht jeden Buchstaben danach einzelnd (einsetzung im play)
+// Längeres Wort = a setzen, kürzeres Wort = b, vergleicht jeden Buchstaben danach einzelnd (einsetzung im play)
 def levenshtein(a, b):
     if len(a) < len(b):
         return levenshtein(b, a)
@@ -40,7 +40,7 @@ def levenshtein(a, b):
 
     return previous_row[-1]
 
-# Auswählen was hinzugefügt werden soll und dann hinzufügen 
+// Auswählen was hinzugefügt werden soll und dann hinzufügen 
 def add_words():
     prompt = input("Type 'n' for new deck or 'o' for old one: ").strip().lower()
     if prompt == "n":
@@ -136,7 +136,7 @@ def add_words():
                 if more != "y":
                     filling = False
 
-# Auswählen was gelöscht werden und dann löschen
+// Auswählen was gelöscht werden und dann löschen
 def delete_words():
     choice = input('Delete "deck", "word" or "definition": ').strip().lower()
     if choice == "deck":
@@ -208,7 +208,7 @@ def delete_words():
     
         del_def = input("Which definition to delete?: ").strip()
         
-        # Überprüfung nicht 0 definitions
+        // Überprüfung nicht 0 definitions
         if del_def in definitions:
             definitions.remove(del_def)
             if len(definitions) == 0:
@@ -217,7 +217,7 @@ def delete_words():
             words[deck][chosen_word]["definition"] = definitions
             save_data()
 
-# Lernmodus
+// Lernmodus
 def play():
     if not words:
         print("No decks available to play.")
@@ -308,7 +308,7 @@ def play():
 
     print(f'You have finished this deck')
 
-# Anzeige der Decks und Wörter
+// Anzeige der Decks und Wörter
 def show():
     if not words:
         print("No decks to show.")
@@ -325,7 +325,7 @@ def show():
                 print(f"    Definition: {definition}")
             print(f"    Difficulty: {difficulty}")
 
-# Funktion am Anfang und Ansteuerung verschieden Befehle
+// Funktion am Anfang und Ansteuerung verschieden Befehle
 def start():
     while True:
         option = input(
