@@ -57,7 +57,6 @@ Python muss auf dem Computer installiert sein.
 Download:  
 https://www.python.org/
 
----
 
 ### 2. Repository herunterladen
 
@@ -67,7 +66,6 @@ git clone https://github.com/MoritzSchallenberg/Learning-vocabulary-tool.git
 
 Alternativ kann das Projekt auch als ZIP-Datei von GitHub heruntergeladen werden.
 
----
 
 ### 3. In den Projektordner wechseln
 
@@ -75,7 +73,6 @@ Alternativ kann das Projekt auch als ZIP-Datei von GitHub heruntergeladen werden
 cd Learning-vocabulary-tool
 ```
 
----
 
 ### 4. Programm starten
 
@@ -199,37 +196,3 @@ Für zukünftige Versionen sind folgende Erweiterungen sinnvoll:
 - Anzeige besonders schwieriger Wörter.
 
 ---
-
-## GitHub Repository
-
-```text
-https://github.com/MoritzSchallenberg/Learning-vocabulary-tool
-```
-
----
-
-## Kurzpräsentation / Video
-
-Optional kann das Projekt in einem kurzen Video oder einer Präsentation gezeigt werden.
-
-Möglicher Ablauf:
-
-1. Kurz erklären, was das Tool macht.
-2. Ein neues Deck erstellen.
-3. Ein Wort mit Definition hinzufügen.
-4. Den Lernmodus starten.
-5. Eine richtige und eine falsche Antwort zeigen.
-6. Kurz erklären, wie die Schwierigkeit angepasst wird.
-
----
-
-## Bewertungshinweis
-
-Das Projekt erfüllt die Anforderungen der Tool-Challenge:
-
-- kleines Python-Projekt
-- verständlicher Code
-- lokale Ausführung möglich
-- README mit Beschreibung, Beispiel und Startanleitung
-- nachvollziehbare Struktur
-- sinnvolle Erweiterungsmöglichkeiten
