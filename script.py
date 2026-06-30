@@ -6,14 +6,13 @@ from collections import defaultdict
 DATE_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 DATA_FILE = "flashcards.json"
 
-#Open Json (Brauchen wir überhaupt?)
+#Open Json
 try:
     with open("flashcards.json", "r") as json_file:
         words = json.load(json_file)
 except (FileNotFoundError, json.JSONDecodeError):
     words = {}
 
-#Speicherung in Json
 def save_data():
     try:
         with open("flashcards.json", "w") as json_file:
@@ -41,7 +40,7 @@ def levenshtein(a, b):
 
     return previous_row[-1]
 
-#
+# Auswählen was hinzugefügt werden soll und dann hinzufügen 
 def add_words():
     prompt = input("Type 'n' for new deck or 'o' for old one: ").strip().lower()
     if prompt == "n":
